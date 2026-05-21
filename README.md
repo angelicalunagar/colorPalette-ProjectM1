@@ -11,12 +11,10 @@ This project provides a simple and intuitive interface for designers and develop
 * **Git/GitHub**: Version control and project hosting.
 
 ## Usage Instructions
-
-### 1. Installation
 Clone this repository to your local machine:
-1. `git clone https://github.com/angelicalunagar/colorPalette-ProjectM1.git`
-2. `cd colorPalette-ProjectM1`
-3. Check README.md for instructions
-4. `npm start` or open index.html
+### 1. `git clone https://github.com/angelicalunagar/colorPalette-ProjectM1.git`
+### 2. `cd colorPalette-ProjectM1`
+### 3. Check README.md for instructions
+### 4. `npm start` or open index.html
 
 ![palette generator runing with a 9 color size](image.png)
