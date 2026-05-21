@@ -1,0 +1,162 @@
+/* 1. Global Variables & Reset */
+:root {
+  --bg-color: #121212;
+  --panel-bg: #1e1e1e;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+  --accent-color: #0a4de3; /* The blue button */
+  --card-bg: #2a2a2a;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem; /* Space between controls and palette */
+}
+
+.controls-section {
+  flex: 0 0 280px; /* Don't grow, don't shrink, stay 280px wide */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.2 rem;
+}
+
+
+select {
+  background-color: var(--panel-bg);
+  color: white;
+  border: 1px solid #333;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.radio-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5 rem;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* The Big Blue Button */
+#generate-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+#generate-button:hover {
+  background-color: #083abf;
+}
+
+#generate-button:active {
+  transform: scale(0.98);
+}
+
+/* 5. Palette Display (Where the cards live) */
+#palette-container {
+  flex-grow: 1; /* Take up all remaining space */
+  display: flex;
+  flex-wrap: nowrap; /* Allow cards to wrap to next line if needed */
+  gap: 1rem;
+  align-content: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/*    ///////////////////////////////////////
+/* Clases para mostrar u ocultar cada formato */
+.code-style {
+  padding: 6px;
+  text-align: center;
+  font-size: 12px;
+  font-family: monospace;
+  color: #444;
+}
+
+/* Cada tarjeta de color */
+.card-style {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color: white;
+  
+}
+
+.card-style:focus {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.color-display {
+  height: 20rem;
+}
+
+#micro-feedback {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #333;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+#micro-feedback.visible {
+  opacity: 1;
+}
